@@ -3,7 +3,22 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 
 ---
 
-[TOC]
+- [ps_ros2_common](# ps_ros2_common)
+    - [Differenes in joysticks of each generation](# Differences in joysticks of each generation)
+    - [Button layout & handling (FOR ROS2)](# Button layout & handling (FOR ROS2))
+        - [DUALSHOCK3](# DUALSHOCK3)
+        - [DUALSHOCK4](# DUALSHOCK4)
+        - [DUALSENSE](# DUALSENSE)
+    - [How to connect? (Wireless)](# How to connect? (Wireless))
+        - [DUALSHOCK4 & Dualsense(Wireless)](# DUALSHOCK4 & Dualsense (Wireless))
+        - [DUALSHOCK3(Wireless)](# DUALSHOCK3 (Wireless))
+    - [How to remove or disable connection?](# How to remove or disable connection?)
+    - [Library usage](# Library usage)
+        - [Tutorial](# Tutorial)
+        - [Using the library](# Using the library)
+    - [For contributors](# For contributors)
+    - [License](# License)
+    - [Other my contents](# Other my contents)
 
 ---
 
@@ -132,7 +147,7 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 
 - Assuming Ubuntu 20.04 LTS and ROS-Foxy. Target computer has to have Bluetooth.
 
-### Dualshock4 & Dualsense
+### Dualshock4 & Dualsense (Wireless)
 
 1. Open "Settings->Bluetooth".
 
@@ -144,7 +159,7 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 
 <img src="images_for_readme/connected.png" alt="connected" style="zoom: 80%;" />
 
-### Dualshock3
+### Dualshock3 (Wireless)
 
 1. Connect Dualshock3 and Target Computer by USB.
 2. Push Dualshock3's "PS button".
