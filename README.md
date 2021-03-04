@@ -2,24 +2,24 @@
 Library for ROS2 that guarantees compatibility in variables of PS controllers of each generation. For SONY(R) Dualshock3, Dualshock4, Dualsense(For PS5)
 
 ---
-## Table of contents (Click to jump to "main/README.md")
+## Table of contents (Click to jump to "main branch")
 
 - [ps_ros2_common](https://github.com/Ar-Ray-code/ps_ros2_common#ps_ros2_common)
-    - [Differenes in joysticks of each generation](https://github.com/Ar-Ray-code/ps_ros2_common#Differences-in-joysticks-of-each-generation)
-    - [Button layout & handling (FOR ROS2)](https://github.com/Ar-Ray-code/ps_ros2_common#Button-layout-&-handling-(FOR-ROS2))
-        - [DUALSHOCK3](https://github.com/Ar-Ray-code/ps_ros2_common#DUALSHOCK3)
-        - [DUALSHOCK4](https://github.com/Ar-Ray-code/ps_ros2_common#DUALSHOCK4)
-        - [DUALSENSE](https://github.com/Ar-Ray-code/ps_ros2_common#DUALSENSE)
-    - [How to connect? (Wireless)](https://github.com/Ar-Ray-code/ps_ros2_common#How-to-connect?-(Wireless))
-        - [DUALSHOCK4 & Dualsense(Wireless)](https://github.com/Ar-Ray-code/ps_ros2_common#DUALSHOCK4-&-Dualsense-(Wireless))
-        - [DUALSHOCK3(Wireless)](https://github.com/Ar-Ray-code/ps_ros2_common#DUALSHOCK3-(Wireless))
-    - [How to remove or disable connection?](https://github.com/Ar-Ray-code/ps_ros2_common#How-to-remove-or-disable-connection?)
+    - [Differenes in joysticks of each generation](https://github.com/Ar-Ray-code/ps_ros2_common#differences-in-joysticks-of-each-generation)
+    - [Button layout & handling (FOR ROS2)](https://github.com/Ar-Ray-code/ps_ros2_common#button-layout--handling-for-ros2)
+        - [DUALSHOCK3](https://github.com/Ar-Ray-code/ps_ros2_common#dualshock3)
+        - [DUALSHOCK4](https://github.com/Ar-Ray-code/ps_ros2_common#dualshock4)
+        - [DUALSENSE](https://github.com/Ar-Ray-code/ps_ros2_common#dualsense)
+    - [How to connect? (Wireless)](https://github.com/Ar-Ray-code/ps_ros2_common#how-to-connect-wireless)
+        - [DUALSHOCK4 & Dualsense(Wireless)](https://github.com/Ar-Ray-code/ps_ros2_common#dualshock4--dualsense-wireless)
+        - [DUALSHOCK3(Wireless)](https://github.com/Ar-Ray-code/ps_ros2_common#dualshock3-wireless)
+    - [How to remove or disable connection?](https://github.com/Ar-Ray-code/ps_ros2_common#how-to-remove-or-disable-connection)
     - [Library usage](https://github.com/Ar-Ray-code/ps_ros2_common#Library-usage)
         - [Tutorial](https://github.com/Ar-Ray-code/ps_ros2_common#Tutorial)
-        - [Using the library](https://github.com/Ar-Ray-code/ps_ros2_common#Using-the-library)
-    - [For contributors](https://github.com/Ar-Ray-code/ps_ros2_common#For-contributors)
-    - [License](https://github.com/Ar-Ray-code/ps_ros2_common#License)
-    - [Other my contents](https://github.com/Ar-Ray-code/ps_ros2_common#Other-my-contents)
+        - [Using the library](https://github.com/Ar-Ray-code/ps_ros2_common#using-the-library)
+    - [For contributors](https://github.com/Ar-Ray-code/ps_ros2_common#for-contributors)
+    - [License](https://github.com/Ar-Ray-code/ps_ros2_common#license)
+    - [Other my contents](https://github.com/Ar-Ray-code/ps_ros2_common#other-my-contents)
 
 ---
 
