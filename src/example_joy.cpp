@@ -1,7 +1,7 @@
 #include "joy/ps_base.hpp"
 #define JOY_VERSION PS3
 
-#include <example_interfaces/msg/int32.hpp>
+#include <std_msgs/msg/int32.hpp>
 
 #if JOY_VERSION == PS5
     #include "joy/ps5.hpp"
@@ -17,8 +17,8 @@
 class example_joy:public rclcpp::Node, public ps
 {
     public:
-        rclcpp::Publisher<example_interfaces::msg::Int32>::SharedPtr pub_int;        
-        example_interfaces::msg::Int32 send_data;
+        rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_int;        
+        std_msgs::msg::Int32 send_data;
 
         void sub_joy_thread(const sensor_msgs::msg::Joy::SharedPtr msg)
         {
@@ -71,7 +71,7 @@ class example_joy:public rclcpp::Node, public ps
         {
             using namespace std::chrono_literals;
             sub_joy = this->create_subscription<sensor_msgs::msg::Joy>("/joy", 1, std::bind(&ps::sub_joy_thread, this, std::placeholders::_1));
-            pub_int = this->create_publisher<example_interfaces::msg::Int32>("output",1);
+            pub_int = this->create_publisher<std_msgs::msg::Int32>("output",1);
         }
 };
 

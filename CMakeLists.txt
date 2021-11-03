@@ -11,7 +11,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(example_interfaces REQUIRED)
+find_package(std_msgs REQUIRED)
 
 include_directories(
   include/ps_ros2_common
@@ -24,7 +24,7 @@ add_executable(joy_test
 ament_target_dependencies(joy_test
   rclcpp
   sensor_msgs
-  example_interfaces
+  std_msgs
 )
 
 if(BUILD_TESTING)
@@ -35,6 +35,11 @@ endif()
 install(TARGETS
   joy_test
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()
