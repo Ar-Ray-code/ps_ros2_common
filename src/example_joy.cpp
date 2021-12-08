@@ -4,13 +4,13 @@
 #include <std_msgs/msg/int32.hpp>
 
 #if JOY_VERSION == PS5
-    #include "joy/ps5.hpp"
+#include "joy/ps5.hpp"
 using namespace ps5;
 #elif JOY_VERSION == PS4
-    #include "joy/ps4.hpp"
+#include "joy/ps4.hpp"
 using namespace ps4;
 #elif JOY_VERSION == PS3
-    #include "joy/ps3.hpp"
+#include "joy/ps3.hpp"
 using namespace ps3;
 #endif
 
@@ -24,7 +24,9 @@ public:
   {
     get_data(msg);
 
-    std::system("clear");
+    auto tmp = std::system("clear");
+    (void)tmp; // for unused warning
+
     std::cout << "square_btn:" << square_btn << std::endl;
     std::cout << "cross_btn :" << cross_btn << std::endl;
     std::cout << "circle_btn: " << circle_btn << std::endl;
@@ -67,19 +69,19 @@ public:
     pub_int->publish(send_data);
   }
 
-  example_joy(const std::string name, const rclcpp::NodeOptions & options)
-  : Node(name, options)
+  example_joy(const std::string name, const rclcpp::NodeOptions &options)
+      : Node(name, options)
   {
     using namespace std::chrono_literals;
     sub_joy =
-      this->create_subscription<sensor_msgs::msg::Joy>(
-      "/joy", 1,
-      std::bind(&ps::sub_joy_thread, this, std::placeholders::_1));
+        this->create_subscription<sensor_msgs::msg::Joy>(
+            "/joy", 1,
+            std::bind(&ps::sub_joy_thread, this, std::placeholders::_1));
     pub_int = this->create_publisher<std_msgs::msg::Int32>("output", 1);
   }
 };
 
-int main(int argc, char ** argv)
+int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);
   rclcpp::NodeOptions options;
