@@ -195,6 +195,7 @@ $ git clone https://github.com/Ar-Ray-code/ps_ros2_common.git
 $ cd ps_ros2_common/
 $ git checkout foxy-devel
 $ cd ~/ros2_ws/
+$ source /opt/ros/foxy/setup.bash
 $ colcon build
 $ source install/local_setup.bash
 ```
