@@ -27,6 +27,7 @@ public:
     auto tmp = std::system("clear");
     (void)tmp; // for unused warning
 
+    std::cout << std::endl;
     std::cout << "square_btn:" << square_btn << std::endl;
     std::cout << "cross_btn :" << cross_btn << std::endl;
     std::cout << "circle_btn: " << circle_btn << std::endl;
@@ -50,7 +51,6 @@ public:
     std::cout << "options_btn: " << options_btn << std::endl;
     std::cout << std::endl;
     std::cout << "PS_btn: " << PS_btn << std::endl;
-    std::cout << "touch_pad: " << touch_pad << std::endl;
     std::cout << std::endl;
     std::cout << "joy_left_x: " << joy_left_x << std::endl;
     std::cout << "joy_left_y: " << joy_left_y << std::endl;

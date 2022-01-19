@@ -28,17 +28,16 @@ public:
     options_btn = bool(msg->buttons[9]);
 
     PS_btn = bool(msg->buttons[12]);
-    touch_pad = bool(msg->buttons[13]);
 
     joy_left_x = msg->axes[0];
     joy_left_y = msg->axes[1];
 
-    joy_right_x = msg->axes[2];
+    L2 = msg->axes[2];
 
-    L2 = msg->axes[3];
-    R2 = msg->axes[4];
+    joy_right_x = msg->axes[3];
+    joy_right_y = msg->axes[4];
 
-    joy_right_y = msg->axes[5];
+    R2 = msg->axes[5];
 
     d_pad_x = msg->axes[6];
     d_pad_y = msg->axes[7];

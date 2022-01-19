@@ -28,7 +28,6 @@ public:
   bool share_btn;
   bool options_btn;
   bool create_btn;
-  bool touch_pad;
   bool R2_btn;
   bool L2_btn;
 
@@ -102,7 +101,6 @@ public:
     share_btn = 0;
     options_btn = 0;
     create_btn = 0;
-    touch_pad = 0;
     R2_btn = 0;
     L2_btn = 0;
 
