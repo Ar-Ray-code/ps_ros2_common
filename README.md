@@ -114,10 +114,10 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 
 | Button (Joy) name | joy-msgs (sensor_msgs/msg/joy) | Handling with "joy/ps5.h" |
 | ----------------- | ------------------------------ | ------------------------- |
-| Cross btn         | **buttons[1]**                 | cross_btn                 |
-| Circle btn        | **buttons[2]**                 | circle_btn                |
-| Triangle btn      | **buttons[3]**                 | triangle_btn              |
-| Square btn        | **buttons[0]**                 | square_btn                |
+| Cross btn         | buttons[0]                     | cross_btn                 |
+| Circle btn        | buttons[1]                     | circle_btn                |
+| Triangle btn      | buttons[2]                     | triangle_btn              |
+| Square btn        | buttons[3]                     | square_btn                |
 | L1 btn            | buttons[4]                     | L1_btn                    |
 | R1 btn            | buttons[5]                     | R1_btn                    |
 | L2 analog         | buttons[6], axes[2]            | L2_btn, L2                |
@@ -127,7 +127,7 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | CREATE btn        | buttons[8]                     | create_btn                |
 | START btn         | None                           | start_btn=buttons[9]      |
 | OPTIONS btn       | buttons[9]                     | options_btn               |
-| PS btn            | **buttons[12]**                | PS_btn                    |
+| PS btn            | buttons[10]                    | PS_btn                    |
 | Up btn            | *axes[6]*=  1                  | up_btn, d_pad_x           |
 | Down btn          | *axes[6]*= -1                  | down_btn, d_pad_x         |
 | Left btn          | *axes[7]*=  1                  | left_btn, d_pad_y         |

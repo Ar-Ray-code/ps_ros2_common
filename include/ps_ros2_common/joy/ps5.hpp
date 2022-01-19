@@ -10,10 +10,10 @@ class ps : public ps_base
 public:
   void get_data(const sensor_msgs::msg::Joy::SharedPtr msg)
   {
-    square_btn = bool(msg->buttons[0]);
-    cross_btn = bool(msg->buttons[1]);
-    circle_btn = bool(msg->buttons[2]);
-    triangle_btn = bool(msg->buttons[3]);
+    cross_btn = msg->buttons[0];
+    circle_btn = msg->buttons[1];
+    triangle_btn = msg->buttons[2];
+    square_btn = msg->buttons[3];
 
     L1_btn = bool(msg->buttons[4]);
     R1_btn = bool(msg->buttons[5]);
@@ -27,7 +27,7 @@ public:
     start_btn = bool(msg->buttons[9]);
     options_btn = bool(msg->buttons[9]);
 
-    PS_btn = bool(msg->buttons[12]);
+    PS_btn = bool(msg->buttons[10]);
 
     joy_left_x = msg->axes[0];
     joy_left_y = msg->axes[1];
