@@ -268,11 +268,11 @@ class example_joy:public rclcpp::Node, public ps
         void sub_joy_thread(const sensor_msgs::msg::Joy::SharedPtr msg)
         {
             get_data(msg);
-            
+
             std::system("clear");
             std::cout << "square_btn:" << square_btn << std::endl;
 			// Write your code !
-        } 
+        }
 
         example_joy(const std::string name, const rclcpp::NodeOptions & options):Node(name, options)
         {
@@ -285,7 +285,7 @@ int main(int argc, char** argv)
     rclcpp::init(argc, argv);
     rclcpp::NodeOptions options;
     auto node = std::make_shared<example_joy>("joy_test",options);
-	
+
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
@@ -298,7 +298,7 @@ int main(int argc, char** argv)
 
 **Methods**
 
-- ps_base::ps_base() 
+- ps_base::ps_base()
   - Initialize ps_base class.
 - virtual void ps_base::get_data(const sensor_msgs::msg::Joy::SharedPtr msg)=0
   - Assign the data of "sensor_msgs::msg::Joy" to the member variable.
@@ -347,7 +347,7 @@ int main(int argc, char** argv)
 
 - If you use other Joy controllers, write a program similar to "include/joy/ps5.hpp".
   And if you have the opportunity, please contribute to this repository! :video_game:
-- I am a student and a beginner in the program. :man_student: If you have a better suggestion, please give me your ideas. 
+- I am a student and a beginner in the program. :man_student: If you have a better suggestion, please give me your ideas.
 
 ## License
 
