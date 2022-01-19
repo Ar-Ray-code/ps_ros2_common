@@ -1,0 +1,14 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/opt/ros/foxy/lib/python3.8/site-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/ros/foxy/lib/python3.8/site-packages"
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "zachflower.uncrustify",
+  },
+  "uncrustify.configPath.linux": ".vscode/uncrustify.cfg"
+}

@@ -69,19 +69,19 @@ public:
     pub_int->publish(send_data);
   }
 
-  example_joy(const std::string name, const rclcpp::NodeOptions &options)
-      : Node(name, options)
+  example_joy(const std::string name, const rclcpp::NodeOptions & options)
+  : Node(name, options)
   {
     using namespace std::chrono_literals;
     sub_joy =
-        this->create_subscription<sensor_msgs::msg::Joy>(
-            "/joy", 1,
-            std::bind(&ps::sub_joy_thread, this, std::placeholders::_1));
+      this->create_subscription<sensor_msgs::msg::Joy>(
+      "/joy", 1,
+      std::bind(&ps::sub_joy_thread, this, std::placeholders::_1));
     pub_int = this->create_publisher<std_msgs::msg::Int32>("output", 1);
   }
 };
 
-int main(int argc, char **argv)
+int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
   rclcpp::NodeOptions options;
