@@ -72,7 +72,6 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | Joystick left y   | axes[1]                        | joy_left_y                |
 | Joystick right x  | axes[3]                        | joy_right_x               |
 | Joystick right y  | axes[4]                        | joy_right_y               |
-| Touch-pad         | None                           | touch_pad=0               |
 
 
 
@@ -106,7 +105,6 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | Joystick left y   | axes[1]                        | joy_left_y                |
 | Joystick right x  | axes[3]                        | joy_right_x               |
 | Joystick right y  | axes[4]                        | joy_right_y               |
-| Touch-pad         | None                           | touch_pad=0               |
 
 ### Dualsense
 
@@ -122,8 +120,8 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | Square btn        | **buttons[0]**                 | square_btn                |
 | L1 btn            | buttons[4]                     | L1_btn                    |
 | R1 btn            | buttons[5]                     | R1_btn                    |
-| L2 analog         | buttons[6], **axes[3]**        | L2_btn, L2                |
-| R2 analog         | buttons[7], **axes[4]**        | R2_btn, R2                |
+| L2 analog         | buttons[6], axes[2]            | L2_btn, L2                |
+| R2 analog         | buttons[7], axes[5]            | R2_btn, R2                |
 | SELECT btn        | None                           | select_btn=buttons[8]     |
 | SHARE btn         | None                           | share_btn=buttons[8]      |
 | CREATE btn        | buttons[8]                     | create_btn                |
@@ -136,9 +134,8 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | Right btn         | *axes[7]*= -1                  | right_btn, d_pad_y        |
 | Joystick left x   | axes[0]                        | joy_left_x                |
 | Joystick left y   | axes[1]                        | joy_left_y                |
-| Joystick right x  | **axes[2]**                    | joy_right_x               |
-| Joystick right y  | **axes[5]**                    | joy_right_y               |
-| Touch-pad         | **buttons[13]**                | touch_pad                 |
+| Joystick right x  | axes[3]                        | joy_right_x               |
+| Joystick right y  | axes[4]                        | joy_right_y               |
 
 ---
 
@@ -335,7 +332,6 @@ int main(int argc, char** argv)
 - bool share_btn
 - bool options_btn
 - bool create_btn
-- bool touch_pad
 - bool R2_btn
 - bool L2_btn
 - float R2
