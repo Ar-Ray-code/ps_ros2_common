@@ -1,6 +1,12 @@
 # ps_ros2_common
 Library for ROS2 that guarantees compatibility in variables of PS controllers of each generation. For SONY(R) Dualshock3, Dualshock4, Dualsense(For PS5)
 
+**Note**
+Please check your Ubuntu 20.04 kernel version `>= 5.13` for playstation HID with following command.
+```bash
+uname -r
+```
+
 ---
 ## Table of contents (Click to jump to "main branch")
 
@@ -108,7 +114,7 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 
 ### Dualsense
 
-- Touch-pad button is available. (Click only)
+- The touch-pad button is similar to the touchpad on a laptop PC. (Not used for Joy-node.)
 
 ![Dualsense_description](images_for_readme/Dualsense_description.png)
 
