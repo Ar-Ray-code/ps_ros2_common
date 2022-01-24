@@ -16,6 +16,8 @@
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
 
+  <exec_depend>joy</exec_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>

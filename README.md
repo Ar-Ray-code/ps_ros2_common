@@ -1,6 +1,12 @@
 # ps_ros2_common
 Library for ROS2 that guarantees compatibility in variables of PS controllers of each generation. For SONY(R) Dualshock3, Dualshock4, Dualsense(For PS5)
 
+**Note**
+Please check your Ubuntu 20.04 kernel version `>= 5.13` for playstation HID with following command.
+```bash
+uname -r
+```
+
 ---
 ## Table of contents (Click to jump to "main branch")
 
@@ -72,7 +78,6 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | Joystick left y   | axes[1]                        | joy_left_y                |
 | Joystick right x  | axes[3]                        | joy_right_x               |
 | Joystick right y  | axes[4]                        | joy_right_y               |
-| Touch-pad         | None                           | touch_pad=0               |
 
 
 
@@ -106,39 +111,37 @@ Library for ROS2 that guarantees compatibility in variables of PS controllers of
 | Joystick left y   | axes[1]                        | joy_left_y                |
 | Joystick right x  | axes[3]                        | joy_right_x               |
 | Joystick right y  | axes[4]                        | joy_right_y               |
-| Touch-pad         | None                           | touch_pad=0               |
 
 ### Dualsense
 
-- Touch-pad button is available. (Click only)
+- The touch-pad button is similar to the touchpad on a laptop PC. (Not used for Joy-node.)
 
 ![Dualsense_description](images_for_readme/Dualsense_description.png)
 
 | Button (Joy) name | joy-msgs (sensor_msgs/msg/joy) | Handling with "joy/ps5.h" |
 | ----------------- | ------------------------------ | ------------------------- |
-| Cross btn         | **buttons[1]**                 | cross_btn                 |
-| Circle btn        | **buttons[2]**                 | circle_btn                |
-| Triangle btn      | **buttons[3]**                 | triangle_btn              |
-| Square btn        | **buttons[0]**                 | square_btn                |
+| Cross btn         | buttons[0]                     | cross_btn                 |
+| Circle btn        | buttons[1]                     | circle_btn                |
+| Triangle btn      | buttons[2]                     | triangle_btn              |
+| Square btn        | buttons[3]                     | square_btn                |
 | L1 btn            | buttons[4]                     | L1_btn                    |
 | R1 btn            | buttons[5]                     | R1_btn                    |
-| L2 analog         | buttons[6], **axes[3]**        | L2_btn, L2                |
-| R2 analog         | buttons[7], **axes[4]**        | R2_btn, R2                |
+| L2 analog         | buttons[6], axes[2]            | L2_btn, L2                |
+| R2 analog         | buttons[7], axes[5]            | R2_btn, R2                |
 | SELECT btn        | None                           | select_btn=buttons[8]     |
 | SHARE btn         | None                           | share_btn=buttons[8]      |
 | CREATE btn        | buttons[8]                     | create_btn                |
 | START btn         | None                           | start_btn=buttons[9]      |
 | OPTIONS btn       | buttons[9]                     | options_btn               |
-| PS btn            | **buttons[12]**                | PS_btn                    |
+| PS btn            | buttons[10]                    | PS_btn                    |
 | Up btn            | *axes[6]*=  1                  | up_btn, d_pad_x           |
 | Down btn          | *axes[6]*= -1                  | down_btn, d_pad_x         |
 | Left btn          | *axes[7]*=  1                  | left_btn, d_pad_y         |
 | Right btn         | *axes[7]*= -1                  | right_btn, d_pad_y        |
 | Joystick left x   | axes[0]                        | joy_left_x                |
 | Joystick left y   | axes[1]                        | joy_left_y                |
-| Joystick right x  | **axes[2]**                    | joy_right_x               |
-| Joystick right y  | **axes[5]**                    | joy_right_y               |
-| Touch-pad         | **buttons[13]**                | touch_pad                 |
+| Joystick right x  | axes[3]                        | joy_right_x               |
+| Joystick right y  | axes[4]                        | joy_right_y               |
 
 ---
 
@@ -271,11 +274,11 @@ class example_joy:public rclcpp::Node, public ps
         void sub_joy_thread(const sensor_msgs::msg::Joy::SharedPtr msg)
         {
             get_data(msg);
-            
+
             std::system("clear");
             std::cout << "square_btn:" << square_btn << std::endl;
 			// Write your code !
-        } 
+        }
 
         example_joy(const std::string name, const rclcpp::NodeOptions & options):Node(name, options)
         {
@@ -288,7 +291,7 @@ int main(int argc, char** argv)
     rclcpp::init(argc, argv);
     rclcpp::NodeOptions options;
     auto node = std::make_shared<example_joy>("joy_test",options);
-	
+
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
@@ -301,7 +304,7 @@ int main(int argc, char** argv)
 
 **Methods**
 
-- ps_base::ps_base() 
+- ps_base::ps_base()
   - Initialize ps_base class.
 - virtual void ps_base::get_data(const sensor_msgs::msg::Joy::SharedPtr msg)=0
   - Assign the data of "sensor_msgs::msg::Joy" to the member variable.
@@ -335,7 +338,6 @@ int main(int argc, char** argv)
 - bool share_btn
 - bool options_btn
 - bool create_btn
-- bool touch_pad
 - bool R2_btn
 - bool L2_btn
 - float R2
@@ -351,7 +353,7 @@ int main(int argc, char** argv)
 
 - If you use other Joy controllers, write a program similar to "include/joy/ps5.hpp".
   And if you have the opportunity, please contribute to this repository! :video_game:
-- I am a student and a beginner in the program. :man_student: If you have a better suggestion, please give me your ideas. 
+- I am a student and a beginner in the program. :man_student: If you have a better suggestion, please give me your ideas.
 
 ## License
 
