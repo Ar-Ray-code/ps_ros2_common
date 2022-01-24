@@ -4,7 +4,7 @@ project(ps_ros2_common)
 execute_process(COMMAND uname -r OUTPUT_VARIABLE UNAME_RESULT OUTPUT_STRIP_TRAILING_WHITESPACE)
 string(REGEX MATCH "[0-9]+.[0-9]+" LINUX_KERNEL_VERSION ${UNAME_RESULT})
 if (LINUX_KERNEL_VERSION LESS 5.13)
-    message(FATAL_ERROR "Linux kernel version should be greater than 5.13")
+    message(WARNING "Linux kernel version should be greater than 5.13")
 endif()
 
 set(CMAKE_CXX_STANDARD 14)
