@@ -18,11 +18,38 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(rclcpp_components REQUIRED)
 
 include_directories(
   include/ps_ros2_common
 )
 
+# add library ---------------------------------------------------------------
+add_library(ps_ros2_common SHARED
+  src/example_joy.cpp
+)
+rclcpp_components_register_nodes(ps_ros2_common
+  "ps_ros2_common::example_joy")
+target_compile_options(ps_ros2_common PUBLIC -Wall)
+
+target_include_directories(ps_ros2_common PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+
+ament_target_dependencies(ps_ros2_common
+  rclcpp
+  rclcpp_components
+  sensor_msgs
+  std_msgs
+)
+
+install(TARGETS ps_ros2_common
+  EXPORT export_${PROJECT_NAME}
+  DESTINATION lib
+)
+
+# joy_test executable -------------------------------------------------------
 add_executable(joy_test
   src/example_joy.cpp
 )
@@ -31,8 +58,10 @@ ament_target_dependencies(joy_test
   rclcpp
   sensor_msgs
   std_msgs
+  rclcpp_components
 )
 
+# testing --------------------------------------------------------------------
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   ament_lint_auto_find_test_dependencies()

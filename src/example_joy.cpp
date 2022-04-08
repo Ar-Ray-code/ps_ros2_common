@@ -14,6 +14,8 @@ using namespace ps4;
 using namespace ps3;
 #endif
 
+namespace ps_ros2_common {
+
 class example_joy : public rclcpp::Node, public ps
 {
 public:
@@ -69,8 +71,8 @@ public:
     pub_int->publish(send_data);
   }
 
-  example_joy(const std::string name, const rclcpp::NodeOptions & options)
-  : Node(name, options)
+  example_joy(const rclcpp::NodeOptions & options)
+  : Node("joy_test", options)
   {
     using namespace std::chrono_literals;
     sub_joy =
@@ -81,11 +83,17 @@ public:
   }
 };
 
+} // namespace ps_ros2_common
+
+#include <rclcpp_components/register_node_macro.hpp>
+RCLCPP_COMPONENTS_REGISTER_NODE(ps_ros2_common::example_joy)
+
 int main(int argc, char ** argv)
 {
+  using namespace ps_ros2_common;
   rclcpp::init(argc, argv);
   rclcpp::NodeOptions options;
-  auto node = std::make_shared<example_joy>("joy_test", options);
+  auto node = std::make_shared<example_joy>(options);
 
   rclcpp::spin(node);
   rclcpp::shutdown();
