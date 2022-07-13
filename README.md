@@ -1,4 +1,10 @@
 # ps_ros2_common
+
+**Look at our better library!** -> [HarvestX/PlayStation-JoyInterface-ROS2](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2)
+
+<br>
+
+
 Library for ROS2 that guarantees compatibility in variables of PS controllers of each generation. For SONY(R) Dualshock3, Dualshock4, Dualsense(For PS5)
 
 **Note**
